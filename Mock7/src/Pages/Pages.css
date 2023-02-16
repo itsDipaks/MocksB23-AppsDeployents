@@ -1,0 +1,27 @@
+.pagination{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.active{
+    padding: 0.5rem;
+    border: 1px solid rgb(67, 212, 0);
+}
+.inactive{
+    border: 1px solid tomato;
+    padding: 0.5rem;
+}
+.tabs{
+    border: 1px solid red;
+    padding: 0.5rem;}
+ .disabeld{
+    border: 1px solid rgb(0, 0, 0);
+    padding: 0.5rem;
+}
+.paginationdiv{
+    width: 20vw;
+    margin: auto;
+    margin-top: 2rem;
+}
