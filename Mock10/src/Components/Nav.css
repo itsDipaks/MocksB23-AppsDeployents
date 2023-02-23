@@ -1,0 +1,26 @@
+
+nav{
+    background-color: rgb(185, 176, 174);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  position: fixed;
+  z-index: 10;
+}
+
+ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width: 40%;
+    margin: auto;
+}
+h1{
+    width: 30%;
+    margin: auto;
+}
+li{
+color: rgb(144, 28, 7);
+font-weight:800;
+}

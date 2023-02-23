@@ -1,0 +1,64 @@
+/* --Home--- */
+
+.heading{
+    padding: 2rem;
+
+}
+.breads{
+    display: grid;
+    grid-template-columns: repeat(4,1fr)
+    ;grid-template-rows: repeat(auto,40px);
+    width:80%;
+    margin: auto;
+    gap: 1rem;
+   
+}
+.breadname{
+    padding: 2rem;
+    background-color: rgb(53, 21, 15);
+    border: 1px solid rgb(173, 212, 16);
+
+}
+
+
+
+/* ------puppy page ---- */
+
+.breadiages{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows:repeat(auto,50px);
+    width: 90%;
+    margin: auto;
+    gap: 1rem;
+}
+.imgs{
+    width: 100%;
+    height: 100%;
+}
+.spanpuppynme{
+    color: tomato;
+}
+.puppyinfo{
+    padding-top: 8rem;
+    padding-bottom: 3rem;
+}
+
+/* -------Search Functionality ------ */
+
+
+.searchfunctionality{
+    padding-top: 10rem;
+}
+
+.serchbox{
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    margin: auto;
+    margin-top: 2rem;
+}
+.serchbox>input{
+    width: 70%;
+    font-size: 1.2rem;
+}
