@@ -1,0 +1,14 @@
+nav{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid tomato;
+    margin-bottom: 1rem;
+}
+nav>ul{
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    padding: 0.1rem 2rem;
+}

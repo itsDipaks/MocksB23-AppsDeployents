@@ -1,0 +1,31 @@
+.outerbox{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(auto,200px);
+    gap: 1rem;
+    width: 90%;
+    margin: auto;
+}
+.outerbox>*{
+    text-align: left;
+}
+
+
+@media (max-width: 768px) {
+    /* CSS styles for screens less than 768px wide */
+    .outerbox{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+      
+    }
+    
+  }
+@media (max-width: 1080px) {
+    /* CSS styles for screens less than 768px wide */
+    .outerbox{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+      
+    }
+    
+  }
