@@ -1,3 +1,4 @@
+import { Text } from '@chakra-ui/react'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "./Compo.css"
@@ -5,11 +6,10 @@ const Navbar = () => {
   return (
     <div>
         <nav>
-            <h1>Mock10</h1>
-            <ul>
-                <li><Link to="/">Home</Link></li>
+            <Text fontSize="2xl">Masai Country Finder</Text>
+                <Text><Link to="/">Home</Link></Text>
        
-            </ul>
+         
         </nav>
     </div>
   )

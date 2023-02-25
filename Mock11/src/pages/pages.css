@@ -11,21 +11,27 @@
 }
 
 
-@media (max-width: 768px) {
-    /* CSS styles for screens less than 768px wide */
+.actionbox{
+    width: 50%;
+    margin: auto;
+}
+.actionbox>*{
+    margin: 1rem;
+}
+  
+@media screen and (min-width: 300px) and (max-width: 760px) { 
+    /* STYLES HERE */
     .outerbox{
         display: grid;
         grid-template-columns: repeat(1,1fr);
       
     }
-    
-  }
-@media (max-width: 1080px) {
-    /* CSS styles for screens less than 768px wide */
+}
+@media screen and (min-width: 780px) and (max-width: 1080px) { 
+    /* STYLES HERE */
     .outerbox{
         display: grid;
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(2,1fr);
       
     }
-    
-  }
+}

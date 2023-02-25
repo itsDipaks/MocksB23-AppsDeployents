@@ -17,19 +17,19 @@ import {
 import React, {useEffect} from "react";
 import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import Modalcompo from "../components/Modalcompo";
 import {getcontrybyfilter, getcountrys} from "../Redux/Getdata/Get.action";
 import "./pages.css";
 const Home = () => {
   let dispatch = useDispatch();
-  let [val,setval]=useState("")
   const {isOpen, onOpen, onClose} = useDisclosure();
+  let [displayarray,setdiaplyarray]=useState([])
   let {data} = useSelector((store) => store.Getdata);
   const [selectedItem, setSelectedItem] = useState(null);
 
   console.log(selectedItem);
   useEffect(() => {
     dispatch(getcountrys());
+    setdiaplyarray(data)
   }, []);
 
   const MoreDetailsClick = (item) => {
@@ -37,27 +37,54 @@ const Home = () => {
     onOpen();
   };
 
-  let handeldchange=(e)=>{
-    console.log(e.target.value)
+  let handeldchange = (e) => {
+    let array = data.filter((el) => el.region == e.target.value);
+    setdiaplyarray(array)
+  };
+  function handeldsort(e) {
+let  value=e.target.value
+
+    if (value == "desc") {
+        displayarray = displayarray.sort((a, b) => {
+        if (Number(a.population) > Number(b.population)) {
+          return -1;
+        }
+        return 1;
+      });
+    } else {
+        displayarray = arr.sort((a, b) => {
+        if (Number(a.population) > Number(b.population)) {
+          return 1;
+        }
+        return -1;
+      });
+    }
+    
   }
   return (
     <div>
-
-<Box >
-
-<Select placeholder='Select option' onChange={(e)=>handeldchange(e)}>
-  <option value='africa'>Africa</option>
-  <option value='americas'>Americas</option>
-  <option value='asia'>Asia</option>
-  <option value='europe'>Europe</option>
-  <option value='oceania'>Oceania</option>
-</Select>
-
-</Box>
-
+      <Box className="actionbox">
+        <Select
+          placeholder="Sort by  Population "
+          onChange={(e) => handeldsort(e)}
+        >
+          <option value="asc">Low To High</option>
+          <option value="desc">High To Low</option>
+        </Select>
+        <Select
+          placeholder="Filter By Region  "
+          onChange={(e) => handeldchange(e)}
+        >
+          <option value="Africa">Africa</option>
+          <option value="Americas">Americas</option>
+          <option value="Asia">Asia</option>
+          <option value="Europe">Europe</option>
+          <option value="Oceania">Oceania</option>
+        </Select>
+      </Box>
 
       <Box className="outerbox">
-        {data?.map((el, index) => (
+        {displayarray?.map((el, index) => (
           <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
             <Image src={el.flag} alt={el.flag} />
 
@@ -78,11 +105,9 @@ const Home = () => {
               <Box>Region : {el.region}</Box>
               <Box>Capital : {el.capital}</Box>
               <Button onClick={() => MoreDetailsClick(el)}>More Details</Button>
-              {/* <Button onClick={()=>{onOpen(index)}}>More Details</Button> */}
             </Box>
 
             {/* ----Modal---- */}
-            {/* <Button onClick={onOpen}>Open Modal</Button> */}
           </Box>
         ))}
 
@@ -94,19 +119,23 @@ const Home = () => {
               <ModalCloseButton />
               <ModalBody>
                 <Text fontWeight="bold" mb="1rem">
-                Country Name : {selectedItem?.name}
+                  Country Name : {selectedItem?.name}
                 </Text>
                 <Text fontWeight="bold" mb="1rem">
-               Native Name :  {selectedItem?.nativeName}
+                  Native Name : {selectedItem?.nativeName}
                 </Text>
                 <Text fontWeight="bold" mb="1rem">
-                SubRegion : {selectedItem?.subregion}
+                  SubRegion : {selectedItem?.subregion}
                 </Text>
                 <Text fontWeight="bold" mb="1rem">
-                Currency  : {selectedItem?.currencies[0].name}
+                  Currency : {selectedItem?.currencies[0].name}
                 </Text>
-              <Text>Language names :  {selectedItem?.languages.map((el)=><Text>{el.name}</Text>)}</Text> 
-              {/* <Text>Boreder  :  {selectedItem?.borders.map((el)=><Text>{el.name}</Text>)}</Text>  */}
+                <Text>
+                  Language names :{" "}
+                  {selectedItem?.languages.map((el) => (
+                    <Text>{el.name}</Text>
+                  ))}
+                </Text>
               </ModalBody>
 
               <ModalFooter>
