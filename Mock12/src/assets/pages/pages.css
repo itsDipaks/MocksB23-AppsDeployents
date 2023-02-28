@@ -1,0 +1,15 @@
+.listbox{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(auto,200px);
+    margin: auto;
+    width: 95%;
+    gap: 1rem;
+}
+.actionbox{
+    width: 40%;
+    margin: auto;
+    /* border: 1px solid tomato; */
+    padding: 1rem;
+    margin-top: 1rem;
+}
