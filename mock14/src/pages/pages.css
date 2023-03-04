@@ -1,0 +1,79 @@
+.outerdiv{
+    display: grid;
+    text-align: center;
+    width: 90%;
+    padding-top: 1rem;
+    margin: auto;
+    grid-template-columns: repeat(4,1fr)
+    ;
+    grid-template-rows: repeat(auto ,170px);
+    gap: 1rem;
+}
+.innerbox{
+    padding: 2rem;
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 13px 27px -5px, rgba(215, 211, 211, 0.3) 0px 8px 16px -8px;
+    cursor: pointer;
+}
+.innerbox:hover{
+background-color: white;
+color: black;
+}
+
+.productouterdiv{
+    display: grid;
+gap: 1rem;
+    width: 95%;
+    margin: auto;
+    padding-top: 2rem;
+    grid-template-columns: repeat(3,1fr)
+    ;grid-template-rows: repeat(auto ,400px);
+}
+.innerproductbox{
+    border: 1px solid red;
+    text-align: center;
+    padding: 2rem;
+}
+.imgprod{
+    width: 100%;
+    height: 300px;
+}
+
+.serchbox{
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    padding: 1rem;
+    margin: auto;
+    padding-top: 2rem;
+}
+.serchbox>input{
+    padding: 1rem;
+    width: 70%;
+    font-size: 1.2rem;
+}
+.serchbox>button{
+    padding: 1rem;
+    background-color: tomato;
+    color: white;
+    width: 25%;
+    font-size: 1.2rem;
+}
+
+.loader{
+    position: absolute;
+    left: 20%;
+    font-size: 2rem;
+    padding-top: 1rem;
+
+}
+
+.infoshowdiv{
+    padding: 1rem;
+    text-align: center;
+}
+.infoshowdiv>h1{
+    font-size: 2rem;
+}
+h1{
+    font-size: 2rem;
+}
